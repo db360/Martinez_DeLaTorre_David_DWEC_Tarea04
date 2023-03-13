@@ -52,7 +52,7 @@ form {
   margin-bottom: 1rem;
 }
 
-.nombre {
+.nombre, .password, .password2 {
   border-radius: 5px;
   margin-top: 3px;
   background-color: transparent;
@@ -336,7 +336,6 @@ input[type=number] {
     margin-bottom: 2rem;
 }
 
-
 .resultado {
     position: absolute;
     display: flex;
@@ -347,20 +346,45 @@ input[type=number] {
     z-index: 9;
     max-width: 30%;
     visibility: hidden;
+    text-align: center;
+
 }
 
 .resTitle {
     font-size: 1.3rem;
     font-weight: bold;
     text-align: center;
-
 }
 .resSubtitle {
     font-size: 1.3rem;
     margin-bottom: 4rem;
 }
 
-.resultado {
-    text-align: center;
+/* Botones Radio */
+.radioContainer label {
+  display: inline-block;
+  font-size: 1.3rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+.radioContainer input[type="radio"] {
+}
 
+.radioContainer input[type="radio"] + label:before {
+
+}
+.radioContainer input[type="radio"]:checked + label:before {
+
+}
+
+.radioContainer input[type="radio"]:checked + label:after {
+
+}
+
+.radioBtns {
+  width: 100%;
+  display: grid;
+  grid-template:
+              "a b" auto
+              "c d" auto;
 }

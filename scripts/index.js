@@ -9,5 +9,5 @@ btnEmpleo.addEventListener("click", () => {
   window.location.href = "/empleo.html";
 });
 btnValoracion.addEventListener("click", () => {
-  window.location.href = "/valoracion.html" ;
+  window.location.href = "/val.html" ;
 });

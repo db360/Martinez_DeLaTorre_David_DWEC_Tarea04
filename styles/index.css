@@ -92,6 +92,11 @@ body {
 
   }
 
+  .title a {
+    all: unset;
+    cursor: pointer;
+  }
+
   .subtitle {
     font-size: 1.5rem;
     margin-top: 3rem;
