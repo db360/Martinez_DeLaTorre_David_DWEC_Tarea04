@@ -1,9 +1,13 @@
 
+// Variable para el formulario
 var formulario = document.getElementById("formulario");
+// Variable donde controlo si el formulario ha sido enviado.
 let enviado = false;
 
+// Variable del Div del resultado
 let resultado = document.getElementById("resultado");
 
+// Variable para los errores;
 let errorNombre = false;
 let errorPassword = false;
 
@@ -37,8 +41,7 @@ document.getElementById("password2").addEventListener("blur", (event) => {
     event.target.style.background = "";
 });
 
-// Agregar las visitas a la página en localStorage
-
+// Agregar las visitas a la página en localStorage, creamos una variable que almacene un item del localstorage y luego creamos un contador cada vez que se ejecute la página */
 let visitas = localStorage.getItem("visitas_valoración");
 if (!visitas) {
     visitas = 0;
@@ -47,7 +50,7 @@ visitas++;
 
 localStorage.setItem("visitas_valoracion", visitas);
 
-
+/* He creado una función enviar donde voy almacenando y validando los datos que tenemos al pulsar enviar en el formulario */
 function enviar(e) {
     e.preventDefault();
 
@@ -128,31 +131,33 @@ function enviar(e) {
 /* Creamos la funcion reset para borrar los campos, y tambien los errores y los colores de error en el formulario. */
 function reset()
 {
+    formulario.reset();
 
+    /* creamos variables para facilitar la escritura del codigo */
     let nombre = document.getElementById("nombre");
     let password = document.getElementById("password");
     let password2 = document.getElementById("password2");
 
+    /* Volvemos a mostrar el boton enviar, ya que lo quitamos al hacer el envio */
     document.getElementById("enviar").style.display = "inline-block";
 
+    /* ocultamos el div de resultado para que no interfiera cuando el formulario todavia no se ha enviado, volvemos a colocar el background de los inputs a transparente */
     resultado.style.visibility = 'hidden';
     nombre.style.backgroundColor = "transparent";
     password.style.backgroundColor = "transparent";
     password2.style.backgroundColor = "transparent";
 
-    nombre.innerHTML = "";
-    password.value = "";
-    password2.value = "";
 
 
+    /* vaciamos los errores */
     document.getElementById("errorNombre").innerHTML = "";
     document.getElementById("errorPassword").innerHTML = "";
     document.getElementById("errorPassword").innerHTML = "";
 
+    /* vaciamos los inputs */
     formulario.nombre.value = "";
-    formulario.password.value = null;
-    formulario.password2.value = null;
+    formulario.password.value = "";
+    formulario.password2.value = "";
 
-    document.getElementById("enviar").style.display = "inline-block";
 
 }

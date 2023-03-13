@@ -377,8 +377,8 @@ input[type=number] {
 
 }
 
-.radioContainer input[type="radio"]:checked + label:after {
-
+.radioContainer input[type="radio"]:checked {
+  color: red;
 }
 
 .radioBtns {

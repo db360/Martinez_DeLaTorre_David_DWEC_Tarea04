@@ -48,7 +48,7 @@ function enviar(e) {
 
     e.preventDefault();
 
-    // Variables con los datos del formulario
+    // Variables con los datos del formulario / validaciones
     var nombre = formulario.nombre.value;
     if(nombre === "") {
         error = true;
@@ -116,20 +116,27 @@ function enviar(e) {
 
 };
 
-
+/* funcion reset */
 function reset()
 {
+    formulario.reset();
 
+    // ocultamos el div de resultado para que no interfiera
     resultado.style.visibility = 'hidden';
+    // hacemos reset a los colores de los inputs
     document.getElementById("nombre").style.backgroundColor = "transparent";
     document.getElementById("telefono").style.backgroundColor = "transparent";
 
+    // volvemos a iniciar en blanco los campos de los errores
     document.getElementById("errorNombre").innerHTML = "";
     document.getElementById("errorTelefono").innerHTML = "";
+
+    // iniciamos todos los campos del formulario
     formulario.nombre.value = "";
     formulario.telefono.value = null;
     formulario.formacion.value = null;
 
+    // Volvemos a mostrar el boton enviar, por si estaba oculto debido al envio
     document.getElementById("enviar").style.display = "inline-block";
 
 
