@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="David Martínez">
+    <title>Catarifláutica - Formulario de solicitud de empleo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/empleo.css">
+</head>
+<body>
+    <div class="root" id="root">
+        <div class="title-container">
+            <div class="title">Catarifláutica</div>
+            <div class="subtitle"></div>
+        </div>
+        <div class="container">
+            <h2>Formulario de solicitud de empleo de valorador:</h2>
+            <form id="formulario">
+                <div class="campo campoNombre">
+                    <p id="errorNombre" class="error"></p>
+                    <label for="nombre">Nombre:</label>
+                    <input class="nombre" required type="text" name="nombre" id="nombre" placeholder="Tu nombre...">
+                </div>
+
+                <div class="campo">
+                    <p id="errorTelefono" class="error"></p>
+                    <label for="telefono">Teléfono:</label>
+                    <input required placeholder="Tu Teléfono..." type="number" id="telefono" name="telefono">
+                </div>
+
+                <div class="categorias">
+                    <label for="formacion">Formación (opcional):</label>
+                    <span class="myarrow"><input list="centrosData" id="formacion" name="formacion"></span>
+
+
+                    <datalist id="centrosData">
+                        <option class="option" value="I.E.S Aguadulce">I.E.S Aguadulce</option>
+                        <option class="option" value="Universidad de Granada">Universidad de Granada</option>
+                        <option class="option" value="Universidad de Málaga">Universidad de Málaga</option>
+                        <option class="option" value="Universidad de Sevilla">Universidad de Sevilla</option>
+                        <option class="option" value="Politécnico Jesús Marín">Politécnico Jesús Marín</option>
+                    </datalist>
+                </div>
+
+                <!--
+                <div class="categorias">
+                    <label for="">Categoría:</label>
+                    <input class="inputCat" type="radio" id="categoria1" name="categoria" value="especie1">
+                    <label for="categoria1">Especie 1</label>
+                    <input class="inputCat" type="radio" id="categoria2" name="categoria" value="especie2">
+                    <label for="categoria2">Especie 2</label>
+                    <input class="inputCat" type="radio" id="categoria3" name="categoria" value="especie3">
+                    <label for="categoria3">Especie 3</label>
+                </div> -->
+
+            <div class="btns">
+                <a class="btnEnviar" id="enviar" href="#">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Submit
+                    <button type="submit" hidden>Submit</button>
+                </a>
+                <a class="btnReset" id="reset" href="#">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Reset
+                </a>
+            </div>
+            </form>
+            <div id="resultado" class="resultado">
+                <div class="resTitle" id="resTitle">
+                </div>
+                <div id="resSubtitle" class="resSubtitle">
+
+                </div>
+                <div id="resNombre" class="resNombre"></div>
+                <div id="resTel" class="resTel"></div>
+                <div id="resForm" class="resForm"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/scripts/empleo.js"></script>
+</html>
